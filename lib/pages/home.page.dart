@@ -31,19 +31,27 @@ class HomePage extends StatelessWidget {
               style: TextStyle(fontSize: 22),
             ),
             SizedBox(height: 20),
-            Wrap(
-              spacing: 10,
-              runSpacing: 10,
-              children: [
-                ...(GlobalParams.accueil as List).map((item) {
+            // Grille horizontale 3x2
+            Expanded(
+              child: GridView.builder(
+                scrollDirection: Axis.horizontal, // Définit le défilement horizontal
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, // Nombre de lignes
+                  crossAxisSpacing: 10, // Espacement entre les lignes
+                  mainAxisSpacing: 10, // Espacement entre les colonnes
+                  childAspectRatio: 1.5, // Ratio largeur/hauteur des éléments
+                ),
+                itemCount: GlobalParams.accueil.length,
+                itemBuilder: (context, index) {
+                  final item = GlobalParams.accueil[index];
                   return InkWell(
                     child: item['icon'],
                     onTap: () {
                       Navigator.pushNamed(context, item['route']);
                     },
                   );
-                }).toList(),
-              ],
+                },
+              ),
             ),
           ],
         ),

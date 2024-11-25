@@ -37,6 +37,7 @@ dependencies:
   firebase_core:
   firebase_auth:
   firebase_database:
+  flutter_launcher_icons:
   flutter:
     sdk: flutter
 
@@ -78,7 +79,8 @@ flutter:
     - assets/images/deconnexion.jpg
     - assets/images/parametres.jpg
     - assets/images/contact.png
-  #   - images/a_dot_ham.jpeg
+    - assets/logo/
+    - assets/logo/logo.jpeg  #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -105,3 +107,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo/logo.jpeg"
