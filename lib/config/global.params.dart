@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import '../notifier/them.dart';
 
 class GlobalParams{
+  static MonTheme themeActue1 = MonTheme();
   static List<Map<String, dynamic>> menus = [
     {
       "title": "Accueil",
